@@ -4,7 +4,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import './Reader.jsx'; 
+import Reader from './Reader.jsx'; 
 //Card
 import * as React from 'react';
 import Card from '@mui/material/Card';
@@ -14,6 +14,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import CardMedia from '@mui/material/CardMedia'; 
 import './NewsMain.css'
+
 
 function NewsMain() {
   const [count, setCount] = useState(0)
@@ -72,16 +73,7 @@ function NewsMain() {
   ))}
 </div>
 
-function App() {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/your-path" element={<YourComponent />} />
-        {/* Define other routes */}
-      </Routes>
-    </Router>
-  );
-}
+
   </>
 )
 }
