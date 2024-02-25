@@ -3,6 +3,14 @@ import { useState, useEffect } from 'react';
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+//Card
+import * as React from 'react';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardActions from '@mui/material/CardActions';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import './NewsMain.css'
 
 function NewsMain() {
   const [count, setCount] = useState(0)
@@ -30,35 +38,32 @@ function NewsMain() {
   return (
     <>
     <div>
-      <a href="https://vitejs.dev" target="_blank">
-        <img src={viteLogo} className="logo" alt="Vite logo" />
-      </a>
-      <a href="https://react.dev" target="_blank">
-        <img src={reactLogo} className="logo react" alt="React logo" />
-      </a>
+      
     </div>
-    <h1>reView</h1>
-    <div className="card">
-      <button onClick={() => setCount((count) => count + 1)}>
-        count is {count}
-      </button>
-      {/* Display news articles */}
-      {articles.map((article, index) => (
-        <div key={index} className="news-block">
-          <h3>{article.title}</h3>
-          <p>{article.description}</p>
-          <a href={article.url} target="_blank" rel="noopener noreferrer">Read more</a>
-        </div>
-      ))}
-      <p>
-        Edit <code>src/App.jsx</code> and save to test HMR
-      </p>
-    </div>
-    <p className="read-the-docs">
-      Click on the Vite and React logos to learn more
-    </p>
+    <h1>NEWS</h1>
+   
+
+    <div className="card-container">
+  {articles.map((article, index) => (
+    <Card key={index} sx={{ maxWidth: 345, margin: 2 }}>
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div">
+          {article.title}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          {article.description}
+        </Typography>
+      </CardContent>
+      <CardActions>
+        <Button size="small" href={article.url} target="_blank" rel="noopener noreferrer">Read More</Button>
+      </CardActions>
+    </Card>
+  ))}
+</div>
+
   </>
 )
 }
 
 export default NewsMain;
+
