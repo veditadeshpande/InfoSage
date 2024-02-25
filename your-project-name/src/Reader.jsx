@@ -13,8 +13,8 @@ const buttons = [
 
 
 
-function Reader() {
-
+function Reader(props) {
+  const { url } = props;
   // Function to fetch news articles
   const showNews = async () => {
     const apiKey = 'cf4f7b8798b84e60a04f361444433a29'; // Replace with your actual API key
