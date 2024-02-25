@@ -47,7 +47,6 @@ function App() {
 
   return (
     <div className='newsMain'>
-      <h1>NEWSCAPSULE</h1>
       <div className="card-container">
         {articles.map((article, index) => (
           <Card key={index} sx={{ display: 'flex', flexDirection: 'column', maxWidth: 345, margin: 2, height: '100%', borderRadius: 8 }}>
