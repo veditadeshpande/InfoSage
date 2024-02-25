@@ -44,7 +44,7 @@ function NewsMain() {
 
   return (
     <div className='newsMain'>
-      <h1>Select an article to read</h1>
+      <h1>Select your adventure !</h1>
       <div className="card-container">
         {articles.map((article, index) => (
           <Card key={index} sx={{ display: 'flex', flexDirection: 'column', maxWidth: 345, margin: 2, height: '100%', borderRadius: 8 }}>
