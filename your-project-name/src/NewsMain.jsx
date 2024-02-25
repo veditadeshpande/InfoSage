@@ -73,7 +73,7 @@ function NewsMain() {
         {/* Conditional rendering for reader mode paragraph */}
         {readerMode && (
           <div>
-            <Reader></Reader>
+            <Reader url={'test'}></Reader>
           </div>
         )}
       </div>

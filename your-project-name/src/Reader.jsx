@@ -11,10 +11,9 @@ const buttons = [
   <Button key="three">Three</Button>,
 ];
 
-
-
 function Reader(props) {
-  const { url } = props;
+  const url = props;
+  console.log(url); 
   // Function to fetch news articles
   const showNews = async () => {
     const apiKey = 'cf4f7b8798b84e60a04f361444433a29'; // Replace with your actual API key
@@ -34,7 +33,7 @@ function Reader(props) {
 
   return (
     <>
-    <h1>Sample news name</h1>
+    <h1></h1>
 
   <div className='mainNewsSection'>
 
