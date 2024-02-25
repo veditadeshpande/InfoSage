@@ -1,6 +1,6 @@
 To run the project  - 
 
-cd your-project-name
-npm install 
-npm run dev
+1) cd your-project-name
+2) npm install 
+3) npm run dev
 
