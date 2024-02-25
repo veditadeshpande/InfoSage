@@ -33,10 +33,11 @@ function NewsMain() {
     fetchNews();
   }, []); // Empty dependency array means this effect runs once on mount
 
-  const openReaderMode = () => {
+  const openReaderMode = (url) => { // Modify openReaderMode to accept url parameter
     // Set reader mode to true and clear articles
     setReaderMode(true);
-    setArticles([]);
+    setSelectedArticleUrl(url); // Set the selected article URL
+    setArticles([]); // Clear articles
     console.log('Reader mode activated');
   }
 
@@ -65,7 +66,8 @@ function NewsMain() {
             <CardActions sx={{ marginTop: 'auto' }}>
               <ButtonGroup variant="contained" aria-label="Basic button group">
                 <Button size="small" href={article.url} target="_blank" rel="noopener noreferrer">Read Source</Button>
-                <Button onClick={openReaderMode}>Read Here</Button>
+                {/* Pass article.url to openReaderMode */}
+                <Button onClick={() => openReaderMode(article.url)}>Read Here</Button>
               </ButtonGroup>
             </CardActions>
           </Card>
@@ -73,7 +75,8 @@ function NewsMain() {
         {/* Conditional rendering for reader mode paragraph */}
         {readerMode && (
           <div>
-            <Reader url={'test'}></Reader>
+            {/* Pass the selectedArticleUrl as prop */}
+            <Reader url={selectedArticleUrl} />
           </div>
         )}
       </div>

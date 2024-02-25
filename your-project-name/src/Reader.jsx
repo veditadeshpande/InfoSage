@@ -33,7 +33,7 @@ function Reader(props) {
 
   return (
     <>
-    <h1></h1>
+    <h1>Sample Heading</h1>
 
   <div className='mainNewsSection'>
 
