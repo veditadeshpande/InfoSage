@@ -5,6 +5,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './Reader.jsx'; 
+import { useNavigate } from 'react-router-dom'; 
 //Card
 import * as React from 'react';
 import Card from '@mui/material/Card';
@@ -14,10 +15,26 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import CardMedia from '@mui/material/CardMedia'; 
 import './NewsMain.css'
+import Reader from './Reader.jsx';
 
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<NewsMain />} />
+        <Route path="/Reader" element={<Reader />} />
+        {/* Define other routes here */}
+      </Routes>
+    </Router>
+  );
+}
 function NewsMain() {
   const [count, setCount] = useState(0)
   const [articles, setArticles] = useState([]); // State to store news articles
+  const navigate = useNavigate();
+  const handleReadMoreClick = (articleUrl) => {
+    navigate('/reader', { state: { articleUrl } }); // Use the '/reader' path or whatever path you've assigned to the Reader component
+  };
 
   // Function to fetch news articles
   const fetchNews = async () => {
@@ -66,22 +83,13 @@ function NewsMain() {
       </Typography>
     </CardContent>
     <CardActions sx={{ marginTop: 'auto' }}>
-      <Button size="small" href={article.url} target="_blank" rel="noopener noreferrer">Read More</Button> {/*Link the third page here*/}
+      <Button size="small" onClick={() => handleReadMoreClick(article.url)}>Read More</Button> {/*Link the third page here*/}
     </CardActions>
   </Card>
   ))}
 </div>
 
-function App() {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/your-path" element={<YourComponent />} />
-        {/* Define other routes */}
-      </Routes>
-    </Router>
-  );
-}
+
   </>
 )
 }

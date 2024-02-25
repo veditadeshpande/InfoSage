@@ -1,28 +1,58 @@
 html,
 body,
 #root,
-.container {
-  height: 100%;
-  margin: 0;
+
+/* App.css */
+
+
+
+body {
+  background-color: #02020b; /* Dark background for neon effect */
+  color: #c8ff80; /* Soft neon green text color */
+  font-family: 'Arial', sans-serif;
 }
 
-.container {
-  display: flex;
+h1 {
+  text-align: center;
+  color: #ff77ff; /* Neon pink color */
+  text-shadow: 0 0 15px #ff77ff, 0 0 25px #ff77ff; /* Neon glow effect */
 }
 
-.leftPanel,
-.rightPanel {
-  height: 100%;
+.newsText h3 {
+  color: #7bffdf; /* Soft neon cyan color */
+  text-shadow: 0 0 10px #7bffdf, 0 0 20px #7bffdf; /* Neon glow effect */
 }
 
-.leftPanel {
-  flex: 0 0 30%; /* Take up 30% of available space */
-  background-color: lightblue; /* Set your desired color */
-  /* Other styles for left panel */
+.newsContent h4 {
+  color: #fff689; /* Soft neon yellow color */
+  text-shadow: 0 0 10px #fff689, 0 0 20px #fff689; /* Neon glow effect */
+  margin-bottom: 2rem;
 }
 
-.rightPanel {
-  flex: 0 0 70%; /* Take up 70% of available space */
-  background-color: lightgreen; /* Set your desired color */
-  /* Other styles for right panel */
+.customization .MuiSlider-thumb {
+  background-color: #fd6bff; /* Neon magenta color */
+  box-shadow: 0 0 10px #fd6bff; /* Glow effect */
 }
+
+.customization .MuiSlider-track {
+  background-color: #6bc2ff; /* Soft neon blue color */
+}
+
+.customization .MuiButton-root {
+  color: #c8ff80; /* Soft neon green text */
+  border: 2px solid #c8ff80; /* Neon green border */
+  box-shadow: 0 0 10px #c8ff80; /* Glow effect */
+}
+
+.customization .MuiButton-root:hover {
+  background-color: rgba(200, 255, 128, 0.2); /* Soft green background on hover */
+  box-shadow: 0 0 15px #c8ff80; /* Glow effect on hover */
+}
+
+/* Add custom classes for neon buttons if needed */
+.neonButton {
+  text-shadow: 0 0 10px #c8ff80, 0 0 20px #c8ff80; /* Neon glow effect */
+}
+
+/* Add any additional neon styling as needed */
+
