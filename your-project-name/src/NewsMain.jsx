@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Reader from './Reader.jsx'; 
 import ButtonGroup from '@mui/material/ButtonGroup';
@@ -9,6 +9,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import CardMedia from '@mui/material/CardMedia';
 import './NewsMain.css';
+import Box from '@mui/material/Box';
 
 function NewsMain() {
   const [articles, setArticles] = useState([]); // State to store news articles
@@ -42,11 +43,11 @@ function NewsMain() {
   }
 
   return (
-    <>
+    <div className='newsMain'>
       <h1>NEWS</h1>
       <div className="card-container">
         {articles.map((article, index) => (
-          <Card key={index} sx={{ display: 'flex', flexDirection: 'column', maxWidth: 345, margin: 2, height: '100%' }}>
+          <Card key={index} sx={{ display: 'flex', flexDirection: 'column', maxWidth: 345, margin: 2, height: '100%', borderRadius: 8 }}>
             {article.urlToImage && (
               <CardMedia
                 component="img"
@@ -55,7 +56,7 @@ function NewsMain() {
                 alt={article.title}
               />
             )}
-            <CardContent sx={{ flexGrow: 1 }}>
+            <CardContent className='selectedCard' sx={{ flexGrow: 1 }}>
               <Typography gutterBottom variant="h5" component="div">
                 {article.title}
               </Typography>
@@ -63,13 +64,25 @@ function NewsMain() {
                 {article.description}
               </Typography>
             </CardContent>
-            <CardActions sx={{ marginTop: 'auto' }}>
-              <ButtonGroup variant="contained" aria-label="Basic button group">
-                <Button size="small" href={article.url} target="_blank" rel="noopener noreferrer">Read Source</Button>
-                {/* Pass article.url to openReaderMode */}
-                <Button onClick={() => openReaderMode(article.url)}>Read Here</Button>
-              </ButtonGroup>
-            </CardActions>
+<CardActions sx={{ marginTop: 'auto', justifyContent: 'center' }}>
+<Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        '& > *': {
+          m: 1,
+        },
+      }}
+    >
+        <ButtonGroup aria-label="Basic button group" >
+    <Button color="secondary" size="large" href={article.url} target="_blank" rel="noopener noreferrer">Read Source</Button>
+    {/* Pass article.url to openReaderMode */}
+    <Button color="secondary" size="large" onClick={() => openReaderMode(article.url)}>Read Here</Button>
+  </ButtonGroup>
+    </Box>
+
+</CardActions>
           </Card>
         ))}
         {/* Conditional rendering for reader mode paragraph */}
@@ -80,7 +93,7 @@ function NewsMain() {
           </div>
         )}
       </div>
-    </>
+    </div>
   );
 }
 

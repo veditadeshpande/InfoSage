@@ -1,8 +1,18 @@
 .card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
-  }
-  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.newsMain {
+  border-radius: 80px;
+  background-color: rgba(0, 0, 0, 0.2); /* Background color with transparency */
+}
+
+.card-container:hover {
+  filter: drop-shadow(0 0 2em #ffffffaa);
+}
+

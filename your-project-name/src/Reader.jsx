@@ -13,6 +13,7 @@ const buttons = [
 
 function Reader(props) {
   const url = props;
+  // USE THIS URL TO FETCH INFORMATION ABOUT THE NEWS SELECTED 
   console.log(url); 
   // Function to fetch news articles
   const showNews = async () => {
