@@ -39,9 +39,8 @@ async function getResponseFromGPT(prompt) {
 
 function Reader(props) {
   const url = props;
-  console.log(url); 
-  const [newsContent, setNewsContent] = useState('Months before Donald Trump’s defiant turn as a witness at his New York civil fraud trial, the former president came face-to-face with the state attorney general who is suing him when he sat for a deposition last year at her Manhattan office. Video made public Friday of the seven-hour, closed-door session last April shows the Republican presidential frontrunner’s demeanor going from calm and cool to indignant — at one point ripping Attorney General Letitia James lawsuit against him as a “disgrace” and “a terrible thing.” Sitting with arms folded, an incredulous Trump complained to the state lawyer questioning him that he was being forced to “justify myself to you” after decades of success building a real estate empire that’s now threatened by the court case. Trump, who contends James’ lawsuit is part of a politically motivated “witch hunt” was demonstrative from the outset. The video shows him smirking and pouting his lips as the attorney general, a Democrat, introduced herself and told him that she was “committed to a fair and impartial legal process.” James’ office released the video Friday in response to requests from media outlets under New York’s Freedom of Information Law. Trump’s lawyers previously posted a transcript of his remarks to the trial docket in August.'); 
-
+  const [newsContent, setNewsContent] = useState(url.url); 
+  console.log(url.url);
   const generatePointwiseSummary = async () => {
     setNewsContent(await getResponseFromGPT('summarize this pointwise and return the final output using bullets(each on a new line)-' + newsContent) ); 
   }

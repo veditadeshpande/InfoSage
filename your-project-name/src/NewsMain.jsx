@@ -44,7 +44,7 @@ function NewsMain() {
 
   return (
     <div className='newsMain'>
-      <h1>NEWSCAPSULE</h1>
+      <h1>Select an article to read</h1>
       <div className="card-container">
         {articles.map((article, index) => (
           <Card key={index} sx={{ display: 'flex', flexDirection: 'column', maxWidth: 345, margin: 2, height: '100%', borderRadius: 8 }}>
@@ -62,6 +62,7 @@ function NewsMain() {
               </Typography>
               <Typography variant="body2" color="text.secondary">
                 {article.description}
+                {console.log(article)}
               </Typography>
             </CardContent>
 <CardActions sx={{ marginTop: 'auto', justifyContent: 'center' }}>
@@ -78,7 +79,7 @@ function NewsMain() {
         <ButtonGroup aria-label="Basic button group" >
     <Button variant="contained" color="secondary" size="large" href={article.url} target="_blank" rel="noopener noreferrer">Read Source</Button>
     {/* Pass article.url to openReaderMode */}
-    <Button variant="contained" color="secondary" size="large" onClick={() => openReaderMode(article.url)}>Read Here</Button>
+    <Button variant="contained" color="secondary" size="large" onClick={() => openReaderMode(article.content)}>Read Here</Button>
   </ButtonGroup>
     </Box>
 
