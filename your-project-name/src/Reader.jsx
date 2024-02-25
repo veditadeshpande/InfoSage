@@ -6,7 +6,7 @@ import Box from '@mui/material/Box';
 import ButtonGroup from '@mui/material/ButtonGroup';
 
 async function getResponseFromGPT(prompt) {
-  const apiKey = '{API_KEY}'; // Replace 'YOUR_API_KEY' with your actual API key
+  const apiKey = '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'; // Replace 'YOUR_API_KEY' with your actual API key
   const apiUrl = 'https://api.openai.com/v1/chat/completions';
 
   try {
@@ -43,19 +43,23 @@ function Reader(props) {
   const [newsContent, setNewsContent] = useState('Months before Donald Trump’s defiant turn as a witness at his New York civil fraud trial, the former president came face-to-face with the state attorney general who is suing him when he sat for a deposition last year at her Manhattan office. Video made public Friday of the seven-hour, closed-door session last April shows the Republican presidential frontrunner’s demeanor going from calm and cool to indignant — at one point ripping Attorney General Letitia James lawsuit against him as a “disgrace” and “a terrible thing.” Sitting with arms folded, an incredulous Trump complained to the state lawyer questioning him that he was being forced to “justify myself to you” after decades of success building a real estate empire that’s now threatened by the court case. Trump, who contends James’ lawsuit is part of a politically motivated “witch hunt” was demonstrative from the outset. The video shows him smirking and pouting his lips as the attorney general, a Democrat, introduced herself and told him that she was “committed to a fair and impartial legal process.” James’ office released the video Friday in response to requests from media outlets under New York’s Freedom of Information Law. Trump’s lawyers previously posted a transcript of his remarks to the trial docket in August.'); 
 
   const generatePointwiseSummary = async () => {
-    setNewsContent(await getResponseFromGPT('summarize this pointwise and return the final output-' + newsContent) ); 
+    setNewsContent(await getResponseFromGPT('summarize this pointwise and return the final output using bullets(each on a new line)-' + newsContent) ); 
   }
 
    const generateSimplifiedSummary = async () => {
-   setNewsContent(await getResponseFromGPT('summarize this content in max 600 words and rephrase-' + newsContent) ); 
+   setNewsContent(await getResponseFromGPT('summarize this content in 1000 words and rephrase-' + newsContent) ); 
    }
 
    const generateStoryContent = async () => {
-   setNewsContent(await getResponseFromGPT('write this in the form of an interesting story in about 600 words-' + newsContent) ); 
+   setNewsContent(await getResponseFromGPT('write this in the form of an interesting story in 1000 words-' + newsContent) ); 
     }
 
     const generateNeutralContent = async () => {
-      setNewsContent(await getResponseFromGPT('summarize this content in max 600 words and rephrase, remove any political bias and make this news article more neutral sounding-' + newsContent) ); 
+      setNewsContent(await getResponseFromGPT('summarize this content in 1000 words and rephrase, remove any political bias and make this news article more neutral sounding-' + newsContent) ); 
+    }
+
+    const generateSwiftieContent = async () => {
+      setNewsContent(await getResponseFromGPT('rewrite it using lines from Taylor Swift songs, use any taylors phrases if required, make it sound like Taylor wrote it -' + newsContent) ); 
     }
     
   return (
@@ -87,7 +91,8 @@ function Reader(props) {
       <Button onClick={generateSimplifiedSummary}>Simplify</Button>
       <Button onClick={generateStoryContent}>Story Mode</Button>
       <Button onClick={generateNeutralContent}>Remove bias</Button>
-
+      <Button onClick={generateSwiftieContent}>Swiftie Mode</Button>
+      
       </ButtonGroup>
     </Box>
     </div>
