@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import './Reader.jsx'; 
 //Card
 import * as React from 'react';
 import Card from '@mui/material/Card';
@@ -10,6 +12,7 @@ import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import CardMedia from '@mui/material/CardMedia'; 
 import './NewsMain.css'
 
 function NewsMain() {
@@ -45,25 +48,45 @@ function NewsMain() {
 
     <div className="card-container">
   {articles.map((article, index) => (
-    <Card key={index} sx={{ maxWidth: 345, margin: 2 }}>
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          {article.title}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {article.description}
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small" href={article.url} target="_blank" rel="noopener noreferrer">Read More</Button>
-      </CardActions>
-    </Card>
+    <Card key={index} sx={{ display: 'flex', flexDirection: 'column', maxWidth: 345, margin: 2, height: '100%' }}>
+      {article.urlToImage && (
+    <CardMedia
+      component="img"
+      height="140"
+      image={article.urlToImage}
+      alt={article.title}
+    />
+  )}
+    <CardContent sx={{ flexGrow: 1 }}>
+      <Typography gutterBottom variant="h5" component="div">
+        {article.title}
+      </Typography>
+      <Typography variant="body2" color="text.secondary">
+        {article.description}
+      </Typography>
+    </CardContent>
+    <CardActions sx={{ marginTop: 'auto' }}>
+      <Button size="small" href={article.url} target="_blank" rel="noopener noreferrer">Read More</Button> {/*Link the third page here*/}
+    </CardActions>
+  </Card>
   ))}
 </div>
 
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/your-path" element={<YourComponent />} />
+        {/* Define other routes */}
+      </Routes>
+    </Router>
+  );
+}
   </>
 )
 }
 
 export default NewsMain;
+
+
 
