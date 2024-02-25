@@ -76,9 +76,9 @@ function NewsMain() {
       }}
     >
         <ButtonGroup aria-label="Basic button group" >
-    <Button color="secondary" size="large" href={article.url} target="_blank" rel="noopener noreferrer">Read Source</Button>
+    <Button variant="contained" color="secondary" size="large" href={article.url} target="_blank" rel="noopener noreferrer">Read Source</Button>
     {/* Pass article.url to openReaderMode */}
-    <Button color="secondary" size="large" onClick={() => openReaderMode(article.url)}>Read Here</Button>
+    <Button variant="contained" color="secondary" size="large" onClick={() => openReaderMode(article.url)}>Read Here</Button>
   </ButtonGroup>
     </Box>
 

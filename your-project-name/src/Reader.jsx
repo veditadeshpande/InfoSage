@@ -63,7 +63,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendi
         },
       }}
     >
-      <ButtonGroup size="large" aria-label="Large button group">
+      <ButtonGroup color="secondary" variant="contained" size="large" aria-label="Large button group">
         {buttons}
       </ButtonGroup>
     </Box>
