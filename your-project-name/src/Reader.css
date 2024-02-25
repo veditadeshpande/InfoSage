@@ -1,0 +1,28 @@
+html,
+body,
+#root,
+.container {
+  height: 100%;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+}
+
+.leftPanel,
+.rightPanel {
+  height: 100%;
+}
+
+.leftPanel {
+  flex: 0 0 30%; /* Take up 30% of available space */
+  background-color: lightblue; /* Set your desired color */
+  /* Other styles for left panel */
+}
+
+.rightPanel {
+  flex: 0 0 70%; /* Take up 70% of available space */
+  background-color: lightgreen; /* Set your desired color */
+  /* Other styles for right panel */
+}
