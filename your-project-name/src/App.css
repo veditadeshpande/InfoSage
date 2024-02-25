@@ -4,6 +4,7 @@
   text-align: center;
   background-image: url('./mainNewsPhoto.jpg');
   height: 100vh; /* Set height to 100% of viewport height */
+  overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 .logo {
