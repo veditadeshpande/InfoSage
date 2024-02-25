@@ -1,28 +1,95 @@
-html,
-body,
-#root,
-.container {
-  height: 100%;
-  margin: 0;
-}
-
-.container {
-  display: flex;
-}
-
-.leftPanel,
-.rightPanel {
-  height: 100%;
-}
-
-.leftPanel {
-  flex: 0 0 30%; /* Take up 30% of available space */
-  background-color: lightblue; /* Set your desired color */
-  /* Other styles for left panel */
-}
-
-.rightPanel {
-  flex: 0 0 70%; /* Take up 70% of available space */
-  background-color: lightgreen; /* Set your desired color */
-  /* Other styles for right panel */
-}
+/* Reader.css */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  }
+  
+  /* Ensure that the body content is flex-centered in both axes */
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #242424;
+    color: rgba(255, 255, 255, 0.87);
+    font-size: 16px; /* Base font size */
+    line-height: 1.5;
+    background-size: cover;
+  }
+  
+  /* Center and contain the main content */
+  .mainNewsSection {
+    width: 90%; /* Adjust width as per your design needs */
+    max-width: 600px; /* Maximum width of the container */
+    margin: 2rem auto; /* Center the section with margin */
+    padding: 2rem; /* Padding inside the container */
+    background-color: #1a1a1a; /* Container background color */
+    border-radius: 15px; /* Rounded corners for the container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Box-shadow for a subtle depth effect */
+  }
+  
+  /* Style for the heading */
+  h1 {
+    color: #646cff; /* Color for the heading text */
+    text-align: center; /* Center align the heading */
+    margin-bottom: 1rem; /* Space below the heading */
+  }
+  
+  /* Styles for subheading/source/author */
+  .newsText h3 {
+    color: #ccc; /* Lighter text color for subheadings */
+    margin-bottom: 0.5rem; /* Space below the subheading */
+  }
+  
+  /* Main content styles */
+  .newsContent h4 {
+    background-color: #2a2a2a; /* Slightly lighter background for content area */
+    padding: 1rem; /* Padding inside the content area */
+    border-radius: 10px; /* Rounded corners for the content area */
+    margin-bottom: 1rem; /* Space below the content area */
+  }
+  
+  /* Customization area styling */
+  .customization {
+    text-align: center; /* Center align sliders and buttons */
+  }
+  
+  /* Slider styling */
+  .Slider {
+    margin-top: 1rem; /* Space above the slider */
+  }
+  
+  /* Button group styling */
+  .ButtonGroup {
+    margin-top: 1rem; /* Space above the button group */
+  }
+  
+  /* Button styling */
+  button {
+    font-size: 1rem; /* Font size for buttons */
+    padding: 0.5rem 1rem; /* Padding inside buttons */
+    background-color: #646cff; /* Background color for buttons */
+    color: white; /* Text color for buttons */
+    border: none; /* No border for buttons */
+    transition: background-color 0.3s ease-in-out; /* Transition for button interaction */
+  }
+  
+  button:hover {
+    background-color: #535bf2; /* Hover color for buttons */
+  }
+  
+  /* Responsive design for larger screens */
+  @media screen and (min-width: 1024px) {
+    .mainNewsSection {
+      width: 70%; /* Adjust width for larger screens */
+    }
+  
+    h1 {
+      font-size: 3rem; /* Larger font size for headings */
+    }
+  
+    .newsContent h4 {
+      font-size: 1.25rem; /* Larger font size for main content */
+    }
+  }
+  
