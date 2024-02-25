@@ -1,4 +1,5 @@
-import { useState } from 'react'
+//import { useState } from 'react'
+import { useState, useEffect } from 'react';
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -9,8 +10,10 @@ function NewsMain() {
 
   // Function to fetch news articles
   const fetchNews = async () => {
-    const apiKey = cf4f7b8798b84e60a04f361444433a29; // Replace with your actual API key
+    const apiKey = 'cf4f7b8798b84e60a04f361444433a29'; // Replace with your actual API key
     const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`;
+    //const NewsAPI = require('newsapi');
+    //const newsapi = new NewsAPI('cf4f7b8798b84e60a04f361444433a29');
 
     try {
       const response = await fetch(url);
