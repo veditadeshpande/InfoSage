@@ -6,7 +6,7 @@
 
 - Our tool, InfoGain, addresses this need by transforming news articles into engaging formats tailored to the young audience. With modes like Simplify, Story Mode, Remove Bias, and our personal favorite, Swiftie Mode, which imbues news with Taylor Swift's musical flair.
 
-To get started with the project:
+To get started with the project (use the main branch):
 1) Navigate to your-project-name directory
 2) Run npm install
 3) Execute npm run dev
