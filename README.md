@@ -11,3 +11,4 @@ To get started with the project:
 2) Run npm install
 3) Execute npm run dev
 
+https://github.com/veditadeshpande/InfoSage/assets/42276546/2cffb766-a303-4e85-bbc9-40c1a0f82681
