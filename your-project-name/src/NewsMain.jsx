@@ -18,7 +18,7 @@ function NewsMain() {
 
   // Function to fetch news articles
   const fetchNews = async () => {
-    const apiKey = 'cf4f7b8798b84e60a04f361444433a29'; // Replace with your actual API key
+    const apiKey = '{USE_NEWSAPI_KEY_HERE}'; // Replace with your actual API key
     const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`;
 
     try {

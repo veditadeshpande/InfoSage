@@ -6,7 +6,7 @@ import Box from '@mui/material/Box';
 import ButtonGroup from '@mui/material/ButtonGroup';
 
 async function getResponseFromGPT(prompt) {
-  const apiKey = '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'; // Replace 'YOUR_API_KEY' with your actual API key
+  const apiKey = '{USE_OPENAI_KEY_HERE}'; // Replace 'YOUR_API_KEY' with your actual API key
   const apiUrl = 'https://api.openai.com/v1/chat/completions';
 
   try {
